@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import {
@@ -20,13 +21,15 @@ import {
 function Header() {
   const { data: session } = useSession();
   return (
-    <div className="sticky top-0 z-50 flex px-4 py-2 bg-white shadow-sm">
+    <div className="sticky top-0 z-50 flex items-center px-4 py-2 bg-white shadow-sm">
       <div className="relative flex-shrink-0 w-20 h-10 cursor-pointer">
-        <Image
-          objectFit="contain"
-          src="https://links.papareact.com/fqy"
-          layout="fill"
-        />
+        <Link href="/">
+          <Image
+            objectFit="contain"
+            src="https://links.papareact.com/fqy"
+            layout="fill"
+          />
+        </Link>
       </div>
 
       <div className="mx-7 flex items-center xl:min-w-[300px]">
