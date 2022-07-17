@@ -9,4 +9,8 @@ export default NextAuth({
       clientSecret: process.env.REDDIT_CLIENT_SECRET,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt",
+  },
 });
