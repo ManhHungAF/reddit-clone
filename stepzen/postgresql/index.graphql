@@ -16,7 +16,7 @@ type Post {
   username: String
   votes: [Vote]
     @materializer(
-      query: "getVoteByPostId"
+      query: "getVotesByPostId"
       arguments: [{ name: "post_id", field: "id" }]
     )
   comments: [Comment]
@@ -158,7 +158,7 @@ type Query {
       configuration: "postgresql_config"
     )
 
-  getVoteByPostId(post_id: ID!): [Vote]
+  getVotesByPostId(post_id: ID!): [Vote]
     @dbquery(
       type: "postgresql"
       schema: "public"
@@ -223,6 +223,15 @@ type Mutation {
       type: "postgresql"
       schema: "public"
       table: "comment"
+      dml: INSERT
+      configuration: "postgresql_config"
+    )
+
+  insertVote(post_id: ID!, username: String!, upvote: Boolean!): Vote
+    @dbquery(
+      type: "postgresql"
+      schema: "public"
+      table: "vote"
       dml: INSERT
       configuration: "postgresql_config"
     )
