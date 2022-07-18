@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Feed from "../components/Feed";
 import PostBox from "../components/PostBox";
+import TopSubreddits from "../components/TopSubreddits";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
 
       <div className="flex">
         <Feed />
+        <TopSubreddits />
       </div>
     </div>
   );

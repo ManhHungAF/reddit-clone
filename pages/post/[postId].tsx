@@ -82,6 +82,7 @@ function PostPage() {
 
           <button
             type="submit"
+            disabled={!session}
             className="p-3 font-semibold text-white bg-red-500 rounded-full disabled:bg-gray-200"
           >
             Comment
