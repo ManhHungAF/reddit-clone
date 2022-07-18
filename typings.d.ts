@@ -1,4 +1,4 @@
-type Comment = {
+type comment = {
   id: number;
   post_id: number;
   text: string;
@@ -29,6 +29,6 @@ type Post = {
   title: string;
   username: string;
   votes: Vote[];
-  comments: Comment[];
+  comments: comment[];
   subreddit: Subreddit[];
 };

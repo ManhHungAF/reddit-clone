@@ -11,12 +11,20 @@ import {
 } from "@heroicons/react/outline";
 import Avatar from "./Avatar";
 import TimeAgo from "react-timeago";
+import { Waveform } from "@uiball/loaders";
 
 type Props = {
   post: Post;
 };
 
 function Post({ post }: Props) {
+  if (!post)
+    return (
+      <div className="flex items-center justify-center w-full p-10 text-xl">
+        <Waveform size={40} lineWeight={3.5} speed={1} color="black" />
+      </div>
+    );
+
   return (
     <Link href={`/post/${post.id}`}>
       <div className="flex bg-white border border-gray-300 rounded-md shadow-sm cursor-pointer hover:border hover:border-gray-600">
