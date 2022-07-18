@@ -19,7 +19,7 @@ function PostPage() {
   const { data: session } = useSession();
   // add comment and refresh page
   const [addComment] = useMutation(ADD_COMMENT, {
-    refetchQueries: [GET_POST_BY_POST_ID, "getPostByPostIdet"],
+    refetchQueries: [GET_POST_BY_POST_ID, "getPostByPostId"],
   });
 
   const { data } = useQuery(GET_POST_BY_POST_ID, {
